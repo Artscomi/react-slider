@@ -19,7 +19,7 @@ const Arrow = ({ direction, handleClick }) => (
       align-items: center;
       transition: transform ease-in 0.1s;
       &:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
       }
       img {
         ${direction === "left" && "transform: rotate(-180deg)"};
