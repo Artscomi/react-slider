@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import Slide from "./Slide";
-import Arrow from './Arrow';
+import Arrow from "./Arrow";
 
 const Slider = ({ slides }) => {
+  const height = window.innerHeight;
   const width = window.innerWidth;
   const [state, setState] = useState({
     activeIndex: 0,
@@ -46,7 +47,7 @@ const Slider = ({ slides }) => {
   };
 
   return (
-    <SliderCSS>
+    <SliderCSS height={height}>
       <SliderContent
         translate={translate}
         transition={transition}
@@ -63,20 +64,20 @@ const Slider = ({ slides }) => {
   );
 };
 
-const SliderCSS = styled.div({
+const SliderCSS = styled.div(({height}) => ({
   position: "relative",
-  height: "100vh",
+  height: `${height}px`,
   width: "100vw",
   overflow: "hidden",
   margin: "0 auto",
-});
+}));
 
-const SliderContent = styled.div(({translate, transition, width}) => ({
+const SliderContent = styled.div(({ translate, transition, width }) => ({
   height: "100%",
   width: `${width}px`,
-  display: 'flex',
-  '> *': {
-    flex: '1 0 auto',
+  display: "flex",
+  "> *": {
+    flex: "1 0 auto",
     transform: `translateX(-${translate}px)`,
     transition: `transform ease-out ${transition}s`,
   },
