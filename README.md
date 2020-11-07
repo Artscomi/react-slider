@@ -5,6 +5,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 To start the app:
 
 Clone the repository
+
 `npm i`
+
 `npm start`
+
 I'm planning to add infinite scroll. Contributions are welcome.
